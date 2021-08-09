@@ -1,0 +1,2 @@
+module GreatHelper
+end

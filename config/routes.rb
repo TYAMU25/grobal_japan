@@ -1,3 +1,23 @@
 Rails.application.routes.draw do
+  get 'great/create'
+  get 'great/destroy'
+  get 'comments/create'
+  get 'comments/destroy'
+  get 'submissions/show'
+  get 'submissions/edit'
+  get 'submissions/update'
+  get 'submissions/new'
+  get 'submissions/create'
+  get 'submissions/destroy'
+  get 'customers/show'
+  get 'customers/edit'
+  get 'customers/update'
+  get 'customers/unsubscribe'
+  get 'customers/withdraw'
+  get 'devise/new'
+  get 'devise/creat'
+  get 'devise/new'
+  get 'homes/top'
+  get 'homes/about'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,2 @@
+class Commint < ApplicationRecord
+end

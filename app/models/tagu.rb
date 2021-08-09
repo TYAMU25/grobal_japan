@@ -1,0 +1,2 @@
+class Tagu < ApplicationRecord
+end
