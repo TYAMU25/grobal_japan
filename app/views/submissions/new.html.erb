@@ -1,2 +1,82 @@
-<h1>Submissions#new</h1>
-<p>Find me in app/views/submissions/new.html.erb</p>
+<form with="post" class="form">
+		<div>
+			<div>あなたの<span class="bold">名前</span><span class="red">*</span></div>
+			<div class="red"></div>
+			<input type="TEXT" name="name" value="" style="width:15em;">
+		</div>
+		<div>
+			<div>あなたの<span class="bold">性別</span><span class="red">*</span></div>
+			<div class="red"></div>
+			<div class="radioType0">
+			    <label><input type="radio" name="sex" value="M"><span class="inputSelect">男性</span></label>
+				<label><input type="radio" name="sex" value="F">
+					<span class="inputSelect">女性</span></label>
+			</div>
+		</div>
+		<div>
+			<div>あなたの<span class="bold">年齢</span></div>
+			  <select name="age">
+				<option value="">-
+				</option><option value="0-9">0-9
+				</option><option value="10-14">10-14
+				</option><option value="15-19">15-19
+				</option><option value="20-24">20-24
+				</option><option value="25-29">25-29
+				</option><option value="30-34">30-34
+				</option><option value="35-39">35-39
+				</option><option value="40-44">40-44
+				</option><option value="45-49">45-49
+				</option><option value="50-54">50-54
+				</option><option value="55-59">55-59
+				</option><option value="60-64">60-64
+				</option><option value="65-69">65-69
+				</option><option value="70-">70-
+			  </option></select>
+		</div>
+		<div>
+			<div>あなたの<span class="bold">居住地</span><span class="red">*</span></div>
+			<div class="red"></div>
+			<div class="radioType0">
+				<select name="loc1" onchange="jc_display('loc1', this[this.selectedIndex].value, 0)">
+					<option value="" hidden="">選択してください</option>
+				<option value="JP">日本</option><option value="CN">中国本土</option><option value="HK">香港</option><option value="MO">マカオ</option><option value="TW">台湾</option><option value="SG">シンガポール</option><option value="AR">アルゼンチン</option><option value="AU">オーストラリア</option><option value="BR">ブラジル</option><option value="CA">カナダ</option><option value="CO">コロンビア</option><option value="EG">エジプト</option><option value="FR">フランス</option><option value="DE">ドイツ</option><option value="IN">インド</option><option value="ID">インドネシア</option><option value="IR">イラン</option><option value="IT">イタリア</option><option value="KR">韓国</option><option value="GB">イギリス</option><option value="US">アメリカ</option><option value="PK">パキスタン</option><option value="PH">フィリピン</option><option value="PL">ポーランド</option><option value="RU">ロシア</option><option value="ES">スペイン</option><option value="TH">タイ</option><option value="TR">トルコ</option><option value="MY">マレーシア</option><option value="MX">メキシコ</option><option value="NL">オランダ</option><option value="NG">ナイジェリア</option><option value="VN">ベトナム</option><option value="OTH">その他</option></select>
+			</div>
+			<div id="loc1Oth_box" class="none" style="margin-top:1em;">
+			    <div class="red"></div>
+    			<div class="inline-block underline" style="border:solid 1px #999;padding:0.5em;">
+    				居住地<span class="red">*</span> :
+    				<input type="text" style="width:15em;" name="loc1Oth" maxlength="30" value="">
+    			</div>
+    		</div>
+		</div>
+		<div>
+			<div><span class="bold">相手の性別</span><span class="red">*</span></div>
+			<div class="red"></div>
+			<div class="radioType0">
+				<label><input type="radio" name="genderLimit" value="0" checked=""><span class="inputSelect">制限なし</span></label>
+				<label><input type="radio" name="genderLimit" value="1"><span class="inputSelect">同性のみ</span></label>
+			</div>
+		</div>
+		<div>
+			<div><span class="bold">タイトル</span><span class="red">*</span></div>
+			<div class="red"></div>
+			<input type="TEXT" name="title" value="" style="width:100%;max-width:20em;">
+		</div>
+		<div>
+			<div><span class="bold">自己紹介/メッセージ</span><span class="red">*</span></div>
+			<div class="red"></div>
+			<textarea name="msg" rows="10"></textarea>
+		</div>
+
+		<div>
+			<div><span class="bold">写真</span>　<span style="font-size:0.9em;color:#666">(JPEG Only)</span></div>
+			<div class="inline-block">
+									<div id="preview"><img src="/img/noimage_thumb.jpg" id="thumbnail"></div>
+							</div>
+			<div class="inline-block">
+				<div style="margin-top:10px;"><label for="upFile"><span class="imgSelect">写真を選択</span></label></div>
+								<div style="margin-top:20px;"><a href="javascript:void(0)" id="clearThumb" style="visibility:hidden">CLEAR</a></div>
+								<div id="imgError" class="red"></div>
+								<div class="center">
+			<button type="submit" class="button" name="mode" value="confirm">投稿する</button>
+		  </div>

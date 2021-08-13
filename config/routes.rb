@@ -23,9 +23,8 @@ Rails.application.routes.draw do
   delete'comments/destroy', to: 'comments#destroy'
 
 
-  resources :submissions, only:[:create,:edit,:update,:destroy,:show,:new]
+  resources :submissions, only:[:create,:edit,:update,:destroy,:show,:new,:index]
   resources :customers, only:[:edit,:update,:show,:unsubscribe,:withdraw]
-
   get 'homes/top',to: 'homes#top'
   get 'homes/about',to: 'homes#about'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
