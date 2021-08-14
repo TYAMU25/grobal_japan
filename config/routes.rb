@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
 
   resources :submissions, only:[:create,:edit,:update,:destroy,:show,:new,:index]
-  resources :customers, only:[:edit,:update,:show,:unsubscribe,:withdraw]
+  resources :customers, only:[:edit,:update,:show,:unsubscribe,:withdraw,:unsubscribe]
   get 'homes/top',to: 'homes#top'
   get 'homes/about',to: 'homes#about'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

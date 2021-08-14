@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Global</title>
+    <title>Global Japan</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+
+  <body>
+    <header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+          <%#= link_to "Global Japan",root_path%>
+          <% if general_user_signed_in? %>
+          <li><%= link_to "ホーム",homes_top_path(general_user_session), class:"fas fa-home"%></li>
+　　　　　<li><%= link_to "投稿フォーム",new_submission_path , class:"fas fa-users"%></li>
+　　　　　<li><%#= link_to "投稿一覧",submission_path(@submission) , class:"fas fa-book-open"%></li>
+　　　　　<li><%= link_to "logout",destroy_general_user_session_path, class:"fas fa-sign-out-alt",method: :delete%></li>
+          <% else %>
+          <li><%= link_to "ホーム",homes_top_path, class:"fas fa-home"%></li>
+          <li><%= link_to "about",homes_about_path, class:"fas fa-link nav-link text-light"%></li>
+          <li><%= link_to "sign up", new_general_user_registration_path, class:"fas fa-user-plus"%></li>
+          <li><%= link_to "login",general_user_session_path, class:"fas fa-sign-in-alt"%></li>
+          <% end %>
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<body></body>
 
   <body>
 
