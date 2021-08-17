@@ -7,7 +7,7 @@ class SubmissionsController < ApplicationController
 
   def index
     @submissions = Submission.all
-    @submission = current_customer
+    @submission = current_general_user
   end
   def edit
     #@submission = Submission.find(params[:id])
