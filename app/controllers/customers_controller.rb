@@ -1,11 +1,10 @@
 class CustomersController < ApplicationController
-  before_action :authenticate_admin_user!
   def show
-    @general_user = current_general_user
+    @customers = current_customer
   end
 
   def edit
-     @general_user = current_general_user
+     @customers = Customer.find(params[:id])
   end
 
   def update

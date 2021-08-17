@@ -21,8 +21,9 @@
           <% if general_user_signed_in? %>
           <li><%= link_to "ホーム",homes_top_path(general_user_session), class:"fas fa-home"%></li>
 　　　　　<li><%= link_to "投稿フォーム",new_submission_path , class:"fas fa-users"%></li>
-　　　　　<li><%#= link_to "投稿一覧",submission_path(@submission) , class:"fas fa-book-open"%></li>
+　　　　　<li><%= link_to "投稿一覧",submissions_path, class:"fas fa-book-open"%></li>
 　　　　　<li><%= link_to "logout",destroy_general_user_session_path, class:"fas fa-sign-out-alt",method: :delete%></li>
+　　　　　<li><%#= link_to "マイページ",customer_path(current_customer), class:"fas fa-users"%></li>
           <% else %>
           <li><%= link_to "ホーム",homes_top_path, class:"fas fa-home"%></li>
           <li><%= link_to "about",homes_about_path, class:"fas fa-link nav-link text-light"%></li>
@@ -36,8 +37,6 @@
     </div>
   </nav>
 </header>
-<body></body>
-
   <body>
 
     <%= yield %>
