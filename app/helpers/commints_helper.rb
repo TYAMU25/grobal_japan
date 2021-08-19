@@ -1,0 +1,2 @@
+module CommintsHelper
+end

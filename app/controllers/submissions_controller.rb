@@ -1,8 +1,7 @@
 class SubmissionsController < ApplicationController
   def show
-    @submission = Submission.new
-    @submissions = Submission.all
-    #@submission = Submission.find(params[:id])
+    @submission = Submission.find(params[:id])
+    @commint = Commint.new
   end
 
   def index
@@ -10,13 +9,13 @@ class SubmissionsController < ApplicationController
     @submission = current_general_user
   end
   def edit
-    #@submission = Submission.find(params[:id])
+    @submission = Submission.find(params[:id])
   end
 
   def update
-    @submission = Submissions.find(params[:id])
+    @submission = Submission.find(params[:id])
     @submission.update(submission_params)
-    redirect_to submission_path(list.id)
+    redirect_to submissions_path
   end
 
   def new
@@ -24,9 +23,11 @@ class SubmissionsController < ApplicationController
   end
 
   def create
-    #submission = Submission.new(submission_params)
-    #submission.save
-    #redirect_to '/top'
+    @submission = Submission.new(submission_params)
+    @submission.name = ""
+    @submission.general_user_id = current_general_user.id
+    @submission.save
+    redirect_to submissions_path
   end
 
   def destroy
@@ -35,7 +36,7 @@ class SubmissionsController < ApplicationController
   private
   # ストロングパラメータ
   def submission_params
-    params.require(:submission).permit(:title, :body)
+    params.require(:submission).permit(:title, :text, :name, :gender, :submissions_target)
   end
 
 end

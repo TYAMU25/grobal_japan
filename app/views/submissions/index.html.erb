@@ -1,1 +1,21 @@
-<h1>hahahah</h1>
+<div class="col-md-8 offset-md-1">
+    <h2>投稿一覧</h2>
+    <table class="table">
+        <tr>
+            <td></td>
+            <td>名前</tr>
+            <td>タイトル</td>
+        </tr>
+        <% @submissions.each do |submission| %>
+        <tr>
+            <td>
+                <%#= link_to submission.general_user.name, submission_path(@submission) %>
+            </td>
+            <td>
+                <%= link_to submission.title, submission_path(@submission) %>
+            </td>
+        </tr>
+        <% end %>
+            
+    </table>
+</div>
