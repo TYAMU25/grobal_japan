@@ -9,12 +9,25 @@
         <% @submissions.each do |submission| %>
         <tr>
             <td>
-                <%#= link_to submission.general_user.name, submission_path(@submission) %>
+                <%= link_to submission.general_user.name, submission_path(@submission) %>
             </td>
             <td>
                 <%= link_to submission.title, submission_path(@submission) %>
             </td>
         </tr>
+
+        <% if submission#.great.present? %>
+          <td>
+            <%= link_to great_create_path, method: :delete do %>
+              ♥<%= submission.greats.count %> 
+            <% end %>
+          </td>
+          <% else %>
+          <td>
+            <%= link_to great_create_path, method: :post do %>
+              ♡<%= submission.greats.count %> 
+            <% end %>
+        <% end %>
         <% end %>
             
     </table>

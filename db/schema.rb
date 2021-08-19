@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_18_141845) do
+ActiveRecord::Schema.define(version: 2021_08_19_125021) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -35,6 +35,11 @@ ActiveRecord::Schema.define(version: 2021_08_18_141845) do
   create_table "contacts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.text "message"
+    t.string "email"
+    t.string "phone_number"
+    t.string "subject"
   end
 
   create_table "general_users", force: :cascade do |t|
@@ -60,6 +65,8 @@ ActiveRecord::Schema.define(version: 2021_08_18_141845) do
     t.datetime "updated_at", null: false
     t.integer "general_user_id"
     t.integer "submissions_recruiting_id"
+    t.integer "submission_id"
+    t.index ["submission_id"], name: "index_greats_on_submission_id"
   end
 
   create_table "guests", force: :cascade do |t|
@@ -74,6 +81,11 @@ ActiveRecord::Schema.define(version: 2021_08_18_141845) do
     t.index ["reset_password_token"], name: "index_guests_on_reset_password_token", unique: true
   end
 
+  create_table "inquiries", force: :cascade do |t|
+    t.string "name"
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "submissions", force: :cascade do |t|

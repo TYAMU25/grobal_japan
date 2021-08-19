@@ -1,4 +1,4 @@
-class ContactsController < ApplicationControlle
+class ContactsController < ApplicationController
     def new
     @contact = Contact.new
     end
@@ -8,8 +8,9 @@ class ContactsController < ApplicationControlle
     if @contact.invalid?
       render :new
     end
+    
     end
-　
+    
     def back
     @contact = Contact.new(contact_params)
     render :new
@@ -23,21 +24,16 @@ class ContactsController < ApplicationControlle
     else
       render :new
     end
+    
     end
 
-  # 送信完了画面を使用する場合お使いください。
-  def done
-  end
+    def done
+    end
 
   private
 
   def contact_params
     params.require(:contact)
-          .permit(:email,
-                  :name,
-                  :phone_number,
-                  :subject,
-                  :message
-                 )
+          .permit(:email, :name, :phone_number, :subject, :message)
   end
 end

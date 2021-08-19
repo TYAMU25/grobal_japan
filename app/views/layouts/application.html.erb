@@ -17,7 +17,6 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
-              <%#= link_to "Global Japan",root_path%>
               <% if general_user_signed_in? %>
               <li><%= link_to "ホーム",root_path, class:"fas fa-home"%></li>
               <li><%= link_to "投稿フォーム",new_submission_path , class:"fas fa-users"%></li>
