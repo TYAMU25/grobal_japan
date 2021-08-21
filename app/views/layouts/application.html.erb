@@ -30,7 +30,6 @@
               <li><%= link_to "about",homes_about_path, class:"fas fa-link nav-link text-light"%></li>
               <li><%= link_to "sign up", new_general_user_registration_path, class:"fas fa-user-plus"%></li>
               <li><%= link_to "login",general_user_session_path, class:"fas fa-sign-in-alt"%></li>
-              <li><%= link_to "お問合せ",new_contact_path, class:"fas fa-users"%></li>
 
               <% end %>
             </ul>
@@ -45,6 +44,8 @@
     
       <%= f.submit %>
     <% end %>
+    
+    
   <body>
 
     <%= yield %>

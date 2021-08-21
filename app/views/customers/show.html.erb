@@ -1,6 +1,15 @@
 <div class="container">
-  <div class="row my-3">
-    <div class="col-sm-8 px-sm-0 offset-sm-1">
+  
+  <div class="col-lg-10 col-xl-8 mx-auto">
+    <div class="row mb-3">
+      <div class="col-12">
+        <h3 class="mb-4">マイページ</h3>
+        <div class="row mb-3">
+          <div class="col-6 col-sm-4 col-md-3 d-flex align-items-center">
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <%= link_to "編集する", edit_customer_path(current_general_user), class:"btn btn-success btn-block" %>
+          </div>
       <h2><%= @customers.name %>さんの会員詳細</h2>
     </div>
   </div>
@@ -32,9 +41,13 @@
           <td><%= @customers.self_introduction %></td>
         </tr>
         <div class="col-6 col-sm-4 col-md-3">
-            <%= link_to "編集する", edit_customer_path(current_general_user), class:"btn btn-success btn-block" %>
+            
         </div>
         </tr>
       </table>
     </div>
   </div>
+   </div>
+  </div>
+</div>
+    

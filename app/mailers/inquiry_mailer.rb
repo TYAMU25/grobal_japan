@@ -1,2 +1,0 @@
-class InquiryMailer < ApplicationMailer
-end

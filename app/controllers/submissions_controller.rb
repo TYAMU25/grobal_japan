@@ -5,7 +5,7 @@ class SubmissionsController < ApplicationController
   end
 
   def index
-    @submissions = Submission.all
+    @submissions = Submission.all.order(created_at: 'DESC')
     @submission = current_general_user
   end
   def edit

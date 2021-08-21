@@ -11,6 +11,12 @@
 // about supported directives.
 //
 //= require jquery3
+
+// TODO : After Delete
+// require("@rails/ujs").start()
+// require("@rails/activestorage").start()
+// require("channels")
+
 //= require popper
 //= require bootstrap-sprockets
 

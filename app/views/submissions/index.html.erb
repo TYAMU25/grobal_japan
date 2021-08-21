@@ -1,34 +1,47 @@
-<div class="col-md-8 offset-md-1">
-    <h2>投稿一覧</h2>
-    <table class="table">
-        <tr>
-            <td></td>
-            <td>名前</tr>
-            <td>タイトル</td>
-        </tr>
-        <% @submissions.each do |submission| %>
-        <tr>
-            <td>
-                <%= link_to submission.general_user.name, submission_path(@submission) %>
-            </td>
-            <td>
-                <%= link_to submission.title, submission_path(@submission) %>
-            </td>
-        </tr>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">投稿一覧</th>
+      <th scope="col">名前</th>
+      <th scope="col">タイトル</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @submissions.each do |submission| %>
+    
+    　<tr>
+        <th scope="row"><%= submission.id %></th>
+        <td><%= link_to submission.general_user.name, submission_path(@submission) %></td>
+        <td><%= submission.title %></td>
+        <% if submission.greats.present? %>
+        <td>
+          <%= link_to great_path(submission.id), method: :delete, remote: true do %>
+            ♥<%= submission.greats.count %> 
+          <% end %>
+        </td>
+      <% else %>
+        <td>
+          <%= link_to great_index_path(id: submission.id), method: :post, remote: true do %>
+            ♡<%= submission.greats.count %> 
+          <% end %>
+        </td>
+      <% end %>
+      </tr>
+    <% end %>
+  </tbody>   
+</table>
 
-        <% if submission#.great.present? %>
-          <td>
-            <%= link_to great_create_path, method: :delete do %>
-              ♥<%= submission.greats.count %> 
-            <% end %>
-          </td>
-          <% else %>
-          <td>
-            <%= link_to great_create_path, method: :post do %>
-              ♡<%= submission.greats.count %> 
-            <% end %>
-        <% end %>
-        <% end %>
-            
-    </table>
-</div>
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>

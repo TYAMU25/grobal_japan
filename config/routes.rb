@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :guests
   devise_for :admins
   devise_for :general_users
@@ -18,8 +19,15 @@ Rails.application.routes.draw do
   #}
   
   get 'search' => "search#index"
-  post 'great/create', to: 'greats#create'
-  delete 'great/destroy', to: 'greats#destroy'
+  
+  scope :great do
+   resources :great, only:[:create, :destroy]
+  end
+  
+  # TODO : After Delete
+  # post 'great/create', to: 'great#create'
+  # delete 'great/destroy', to: 'great#destroy'
+  
   post 'comments/create', to: 'comments#create'
   delete'comments/destroy', to: 'comments#destroy'
 
