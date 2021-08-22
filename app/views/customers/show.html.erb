@@ -1,53 +1,25 @@
 <div class="container">
-  
-  <div class="col-lg-10 col-xl-8 mx-auto">
-    <div class="row mb-3">
-      <div class="col-12">
-        <h3 class="mb-4">マイページ</h3>
-        <div class="row mb-3">
-          <div class="col-6 col-sm-4 col-md-3 d-flex align-items-center">
-          </div>
-          <div class="col-6 col-sm-4 col-md-3">
-            <%= link_to "編集する", edit_customer_path(current_general_user), class:"btn btn-success btn-block" %>
-          </div>
-      <h2><%= @customers.name %>さんの会員詳細</h2>
-    </div>
-  </div>
   <div class="row">
-    <div class="col-sm-6 px-sm-0 offset-sm-1">
-      <table class="table table-bordered">
-        <tr>
-          <th class="table-active">名前</th>
-          <td><%= @customers.name %></td>
-        </tr>
-        <tr>
-          <th class="table-active">性別</th>
-          <td><%= @customers.gender %></td>
-        </tr>
-        <tr>
-          <th class="table-active">生年月日</th>
-          <td><%= @customers.birthdate %></td>
-        </tr>
-        <tr>
-          <th class="table-active">Eメール</th>
-          <td><%= @customers.email %></td>
-        </tr>
-        <tr>
-          <th class="table-active">パスワード</th>
-          <td><%= @customers.encrypted_password %></td>
-        </tr>
-        <tr>
-          <th class="table-active">自己紹介文</th>
-          <td><%= @customers.self_introduction %></td>
-        </tr>
-        <div class="col-6 col-sm-4 col-md-3">
-            
-        </div>
-        </tr>
+    <div class="col-md-3">
+      <h2>User info</h2>
+      <%#= attachment_image_tag current_general_user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
+      <table class="table">
+        <tbody>
+          <tr></tr>
+          <tr>
+            <th>name</th>
+        	  <th><%= current_general_user.name%></th>
+          </tr>
+          <tr>
+        	  <td>フォロー数: <%= current_general_user.followings.count %></td>
+        	</tr>
+        	<tr>
+        	  <td>フォロワー数: <%= current_general_user.followers.count %></td>
+          </tr>
+        </tbody>
       </table>
-    </div>
-  </div>
-   </div>
-  </div>
-</div>
-    
+
+      <div class="row">
+       <%=link_to"編集" ,edit_customer_path(@current_general_user),class:"btn btn-outline-secondary btn-block fas fa-user-cog"%>
+      </div>
+      

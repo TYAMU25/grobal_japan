@@ -45,4 +45,7 @@ Rails.application.routes.draw do
   post 'contacts/back', to: 'contacts#back', as: 'back'
   get 'done', to: 'contacts#done', as: 'done'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resource :relationships, only: [:create, :destroy]
+  get 'followings' => 'relationships#followings', as: 'followings'
+  get 'followers' => 'relationships#followers', as: 'followers'
 end
