@@ -9,22 +9,20 @@
         <div class="form-group row">
           <div class="col-sm-6 col-md-4">
             <%= f.label "名前", class: "col-md-4 col-form-label" %>
-            <%= f.text_field :name, autofocus: true,  placeholder: "名前", class:"form-control" %>
+            <%= f.text_field :name, autofocus: true,  placeholder: "", class:"form-control" %>
           </div>
           <div class="col-sm-6 col-md-4">
             <%= f.label "性別", class: "col-md-4 col-form-label" %>
-            <%= f.text_field :gender, autofocus: true,  placeholder: "性別", class:"form-control" %>
+            <%= f.text_field :gender, autofocus: true,  placeholder: "", class:"form-control" %>
           </div>
         </div>
 
         <div class="form-group row">
           <div class="col-sm-6 col-md-4">
             <%= f.label "生年月日", class: "col-md-4 col-form-label" %>
-            <%= f.text_field :birthdate, autofocus: true,  placeholder: "生年月日", class:"form-control" %>
+            <%= f.text_field :birthdate, autofocus: true,  placeholder: "1995/11/11", class:"form-control" %>
           </div>
           <div class="col-sm-6 col-md-4">
-            <%#= f.label "パスワード", class: "col-md-4 col-form-label" %>
-            <%#= f.text_field :encrypted_password, autofocus: true,  placeholder: "パスワード（６文字以上）", class:"form-control" %>
             <div class="field">
               <%= f.label :password %>
               <% if @minimum_password_length %>
@@ -37,13 +35,6 @@
               <%= f.label :password_confirmation %><br />
               <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
             </div>
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <div class="col-sm-6 col-md-4">
-            <%= f.label "自己紹介文", class: "col-md-4 col-form-label" %>
-            <%= f.text_field :self_introduction, autofocus: true, autocomplete: "", placeholder: "", class:"form-control" %>
           </div>
         </div>
         <div class="field">

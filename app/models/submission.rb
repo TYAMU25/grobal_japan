@@ -7,3 +7,4 @@ class Submission < ApplicationRecord
       greates.where(general_user_id: general_user.id).exists?
   end
 end
+
