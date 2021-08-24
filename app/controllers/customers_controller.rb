@@ -15,6 +15,13 @@ class CustomersController < ApplicationController
       render :edit
     end
   end
+  
+  def destroy
+    @customer = GeneralUser.find(params[:id])
+    @customer.destroy
+    flash[:success] = 'ユーザーを削除しました。'
+    redirect_to submission_path(@submission)
+  end
 
   def unsubscribe
      @customer = current_general_user

@@ -35,10 +35,9 @@ Rails.application.routes.draw do
   resources :submissions, only:[:create,:edit,:update,:destroy,:show,:new,:index] do
    resources :commints, only:[:create]
   end
-  resources :customers, only:[:edit,:update,:show,:unsubscribe,:withdraw,:unsubscribe]
+  resources :customers, only:[:edit,:update,:show,:unsubscribe,:withdraw,:destroy]
   resources :general_user, only:[:edit,:update,:show,:index, :create]
  
-  get 'homes/about',to: 'homes#about'
   root to: 'homes#top'
   resources :contacts, only:[:new,:create]
   post 'contacts/confirm', to: 'contacts#confirm', as: 'confirm'

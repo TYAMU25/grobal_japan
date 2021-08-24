@@ -22,4 +22,5 @@
       <div class="row">
        <%=link_to"編集" ,edit_customer_path(@current_general_user),class:"btn btn-outline-secondary btn-block fas fa-user-cog"%>
       </div>
-      
+      <td><%#= link_to 'Destroy', submission_path(@submission), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy__#{submission_path(@current_general_user).id}"%></td>
+        

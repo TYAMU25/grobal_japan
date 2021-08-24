@@ -17,13 +17,13 @@
         <% if submission.greats.present? %>
         <td>
           <%= link_to great_path(submission.id), method: :delete, remote: true do %>
-            ♥<%= submission.greats.count %> 
+            ★<%= submission.greats.count %> 
           <% end %>
         </td>
       <% else %>
         <td>
           <%= link_to great_index_path(id: submission.id), method: :post, remote: true do %>
-            ♡<%= submission.greats.count %> 
+            ☆<%= submission.greats.count %> 
           <% end %>
         </td>
       <% end %>
