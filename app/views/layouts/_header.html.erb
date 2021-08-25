@@ -7,17 +7,16 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
           <% if general_user_signed_in? %>
-          <li><%= link_to "ホーム",root_path, class:"fas fa-home"%></li>
-          <li><%= link_to "投稿フォーム",new_submission_path , class:"fas fa-users"%></li>
-          <li><%= link_to "投稿一覧",submissions_path, class:"fas fa-book-open"%></li>
-          <li><%= link_to "マイページ",customer_path(current_general_user), class:"fas fa-users"%></li>
-          <li><%= link_to "logout",destroy_general_user_session_path, class:"fas fa-sign-out-alt",method: :delete%></li>
+          <li><%= link_to "ホーム",root_path, class:"btn btn-light"%></li>
+          <li><%= link_to "投稿",new_submission_path , class:"btn btn-light"%></li>
+          <li><%= link_to "投稿一覧",submissions_path, class:"btn btn-light"%></li>
+          <li><%= link_to "マイページ",customer_path(current_general_user), class:"btn btn-light"%></li>
+          <li><%= link_to "ログアウト",destroy_general_user_session_path, class:"btn btn-light",method: :delete%></li>
           
           <% else %>
-          <li><%= link_to "ホーム",root_path, class:"fas fa-home"%></li>
-          <li><%= link_to "about",homes_about_path, class:"fas fa-link nav-link text-light"%></li>
-          <li><%= link_to "sign up", new_general_user_registration_path, class:"fas fa-user-plus"%></li>
-          <li><%= link_to "login",general_user_session_path, class:"fas fa-sign-in-alt"%></li>
+          <li><%= link_to "ホーム",root_path, class:"btn btn-light"%></li>
+          <li><%= link_to "ログアウト", new_general_user_registration_path, class:"btn btn-light"%></li>
+          <li><%= link_to "ログイン",general_user_session_path, class:"btn btn-light"%></li>
 
           <% end %>
         </ul>

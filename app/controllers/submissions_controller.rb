@@ -2,6 +2,7 @@ class SubmissionsController < ApplicationController
   def show
     @submission = Submission.find(params[:id])
     @commint = Commint.new
+    @commints = Commint.all
   end
 
   def index
@@ -20,6 +21,7 @@ class SubmissionsController < ApplicationController
 
   def new
     @submission = Submission.new
+    @submissions = Submission.all
   end
 
   def create

@@ -1,4 +1,4 @@
-
+<body class="text-center">
 <h1>新規投稿</h1>
 <%= form_with model: @submission, url:'/submissions', local:true do |f| %>
   <h4>タイトル</h4>
@@ -14,4 +14,5 @@
   <%= f.text_field :submissions_target %>
   <%= f.submit '投稿する' %>
 <% end %>
+</body>
  

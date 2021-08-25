@@ -1,6 +1,6 @@
 <div class="col-md-8 offset-md-1">
-      <h2>投稿一覧</h2>
-      <table class="table table-hover table-inverse">
+  <h2>投稿一覧</h2>
+  <table class="table table-hover table-inverse">
     <tr>
       <th></th>
       <th>投稿タイトル</th>
@@ -13,4 +13,8 @@
   <%= f.submit 'コメントする' %>
 <% end %>
 
-<%#= link_to "ホームへ戻る", posts_path %>
+<% @commints.each do |commint| %>
+    
+ <div><%= commint.comment %></div>
+ 
+<% end %>
