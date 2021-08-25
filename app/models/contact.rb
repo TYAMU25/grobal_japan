@@ -1,5 +1,5 @@
 class Contact < ApplicationRecord
-    def change
+  def change
     create_table :contacts do |t|
       t.string :name, null: false
       t.string :email, null: false
@@ -9,5 +9,5 @@ class Contact < ApplicationRecord
 
       t.timestamps
     end
-    end
+  end
 end

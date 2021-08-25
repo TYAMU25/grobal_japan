@@ -1,9 +1,5 @@
 class Commint < ApplicationRecord
-  def create
-      
-  end
+  def create; end
 
-  def destroy
-      
-  end
+  def destroy; end
 end

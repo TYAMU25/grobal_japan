@@ -1,13 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-3">
-      <h2>User info</h2>
+    <div class="col-md-4">
       <%#= attachment_image_tag current_general_user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
       <table class="table">
         <tbody>
-          <tr></tr>
           <tr>
-            <th>name</th>
+            <th>名前</th>
         	  <th><%= current_general_user.name%></th>
           </tr>
           <tr>
@@ -20,7 +18,7 @@
       </table>
 
       <div class="row">
-       <%=link_to"編集" ,edit_customer_path(@current_general_user),class:"btn btn-outline-secondary btn-block fas fa-user-cog"%>
+       <%=link_to"編集" ,edit_customer_path(@current_general_user),class:"btn btn-outline-light btn-block fas fa-user-cog"%>
       </div>
       <td><%#= link_to 'Destroy', submission_path(@submission), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy__#{submission_path(@current_general_user).id}"%></td>
         

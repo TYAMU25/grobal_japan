@@ -6,9 +6,9 @@ class RelationshipsController < ApplicationController
 
   def destroy
     current_general_user.unfollow(params[:general_user_id])
-    redirect_to request.referer  
+    redirect_to request.referer
   end
-  
+
   def followings
     current_general_user = GeneralUser.find(params[:general_user_id])
     byebug

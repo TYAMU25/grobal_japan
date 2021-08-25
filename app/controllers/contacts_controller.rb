@@ -1,22 +1,19 @@
 class ContactsController < ApplicationController
-    def new
+  def new
     @contact = Contact.new
-    end
+  end
 
-    def confirm
+  def confirm
     @contact = Contact.new(contact_params)
-    if @contact.invalid?
-      render :new
-    end
-    
-    end
-    
-    def back
+    render :new if @contact.invalid?
+  end
+
+  def back
     @contact = Contact.new(contact_params)
     render :new
-    end
+  end
 
-    def create
+  def create
     @contact = Contact.new(contact_params)
     if @contact.save
       ContactMailer.send_mail(@contact).deliver_now
@@ -24,11 +21,9 @@ class ContactsController < ApplicationController
     else
       render :new
     end
-    
-    end
+  end
 
-    def done
-    end
+  def done; end
 
   private
 

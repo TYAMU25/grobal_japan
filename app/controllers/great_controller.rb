@@ -9,9 +9,7 @@ class GreatController < ApplicationController
   def destroy
     submission = Submission.find(params[:id])
     great = current_general_user.greats.find_by(submission_id: submission.id)
-    if great
-      great.destroy
-    end
+    great.destroy if great
     redirect_back(fallback_location: root_path)
   end
 end

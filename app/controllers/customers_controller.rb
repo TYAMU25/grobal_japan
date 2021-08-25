@@ -8,14 +8,14 @@ class CustomersController < ApplicationController
   end
 
   def update
-     @customer = GeneralUser.find(params[:id])
+    @customer = GeneralUser.find(params[:id])
     if @customer.update(customer_params)
-      redirect_to customer_path(@customer), notice: "会員情報を変更しました"
+      redirect_to customer_path(@customer), notice: '会員情報を変更しました'
     else
       render :edit
     end
   end
-  
+
   def destroy
     @customer = GeneralUser.find(params[:id])
     @customer.destroy
@@ -24,19 +24,19 @@ class CustomersController < ApplicationController
   end
 
   def unsubscribe
-     @customer = current_general_user
+    @customer = current_general_user
   end
 
   def withdraw
     @customer = current_general_user
     @customer.destroy
     reset_session
-    redirect_to root_path, alert: "退会しました"
-  end
-  
-  private
-  def customer_params
-    params.require(:general_user).permit(:name, :gender, :birthdate, :self_introduction, :email , :encrypted_password)
+    redirect_to root_path, alert: '退会しました'
   end
 
+  private
+
+  def customer_params
+    params.require(:general_user).permit(:name, :gender, :birthdate, :self_introduction, :email, :encrypted_password)
+  end
 end

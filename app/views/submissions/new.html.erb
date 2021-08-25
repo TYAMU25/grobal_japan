@@ -8,11 +8,10 @@
   <%= f.text_field :gender %>
   
   <h4>本文</h4>
-  <%= f.text_area :text %>
+  <%= f.text_area :text, autofocus: true,class: 'form-control' %>
   
   <h4>募集対象</h4>
   <%= f.text_field :submissions_target %>
   <%= f.submit '投稿する' %>
 <% end %>
 </body>
- 

@@ -15,12 +15,9 @@ class AddColumnsToUsers < ActiveRecord::Migration[5.2]
     add_column :greats, :general_user_id, :integer
     add_column :greats, :submissions_recruiting_id, :integer
 
-
     add_column :tagu_relationships, :submission_id, :integer
     add_column :tagu_relationships, :tagu_id, :integer
 
     add_column :tagus, :name, :string
-
-
   end
 end

@@ -1,3 +1,2 @@
 class TaguRelationship < ApplicationRecord
-    
 end

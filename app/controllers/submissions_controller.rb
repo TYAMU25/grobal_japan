@@ -9,6 +9,7 @@ class SubmissionsController < ApplicationController
     @submissions = Submission.all.order(created_at: 'DESC')
     @submission = current_general_user
   end
+
   def edit
     @submission = Submission.find(params[:id])
   end
@@ -26,19 +27,18 @@ class SubmissionsController < ApplicationController
 
   def create
     @submission = Submission.new(submission_params)
-    @submission.name = ""
+    @submission.name = ''
     @submission.general_user_id = current_general_user.id
     @submission.save
     redirect_to submissions_path
   end
 
-  def destroy
-  end
+  def destroy; end
 
   private
+
   # ストロングパラメータ
   def submission_params
     params.require(:submission).permit(:title, :text, :name, :gender, :submissions_target)
   end
-
 end
