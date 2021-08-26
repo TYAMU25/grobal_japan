@@ -1,6 +1,5 @@
-
-<body class="text-center">
-<%= form_for(@contact, url: confirm_path) do |f| %>
+<div class="container">
+  <%= form_for(@contact, url: confirm_path) do |f| %>
   <div class="form-group">
     <h3><%= f.label :name, 'お名前*' %></h3>
     <%= f.text_field :name, autofocus: true, class: 'form-control' %>
@@ -26,6 +25,5 @@
   <h4><%= f.submit '入力内容確認' %></h4>
   </div>
 <% end %>
-
-</dody>
+</div>
 

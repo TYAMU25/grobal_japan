@@ -9,16 +9,8 @@
   </head>
 
   <body>
-    <body style="background-color:grey">
     <%= render 'layouts/header' %>
-    <%= search_form_for @q, url: search_path  do |f| %>
-
-      <%= f.label :name_or_gender_cont %>
-      <%= f.search_field :name_or_gender_cont %>
-      <%= f.submit %>
-    <% end %>
-
     <%= yield %>
+    <%= render 'layouts/footer' %>
   </body>
-  <%= render 'layouts/footer' %>
 </html>

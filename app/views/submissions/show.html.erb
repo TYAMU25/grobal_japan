@@ -1,20 +1,27 @@
-<div class="col-md-8 offset-md-1">
-  <h2>投稿一覧</h2>
-  <table class="table table-hover table-inverse">
-    <tr>
-      <th></th>
-      <th>投稿タイトル</th>
-      <th colspan="3"></th>
-  </table>
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 mx-auto">
+      <h3 class="text-center"><%= @general_user.name %></h3>
+      <div class="my-3 text-center">
+        <%= form_for [@submission, @commint] do |f| %>
+          <%= f.hidden_field :submission_id, value: params[:id] %>
+          <%= f.text_field :comment, class: 'form-control' %>
+          <%= f.submit 'コメントする', class: 'mt-2 btn btn-block btn-light btn-sm' %>
+        <% end %>
+      </div>
+      <% @commints.each do |comment| %>
+        <% if comment.general_user.id == current_general_user.id %>
+          <div class="bg-white text-right mb-2 p-1">
+            <small class="user-name"><%= comment.general_user.name %> ( <%= comment.created_at.in_time_zone('Asia/Tokyo').strftime('%Y/%m/%d %H:%M') %> )</small><br>
+            <%= comment.comment %>
+          </div>
+        <% else %>
+          <div class="bg-white text-left mb-2 p-1">
+            <small class="user-name"><%= comment.general_user.name %> ( <%= comment.created_at.in_time_zone('Asia/Tokyo').strftime('%Y/%m/%d %H:%M') %> )</small><br>
+            <%= comment.comment %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
-<%= form_for [@submission, @commint] do |f| %>
-  <%= f.text_field :comment %>
-  <br>
-  <%= f.submit 'コメントする' %>
-<% end %>
-
-<% @commints.each do |commint| %>
-    
- <div><%= commint.comment %></div>
- 
-<% end %>

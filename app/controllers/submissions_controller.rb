@@ -1,8 +1,9 @@
 class SubmissionsController < ApplicationController
   def show
+    @general_user = GeneralUser.find(current_general_user.id)
     @submission = Submission.find(params[:id])
     @commint = Commint.new
-    @commints = Commint.all
+    @commints = Commint.where(submission_id: params[:id]).reverse
   end
 
   def index

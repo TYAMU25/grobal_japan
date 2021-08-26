@@ -3,8 +3,16 @@
     <div class="container">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
+        
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        
+          <%= search_form_for @q, url: search_path  do |f| %>
+          <%= f.label :name_or_gender_cont %>
+          <%= f.search_field :name_or_gender_cont %>
+          <%= f.submit %>
+          <% end %>
+          
         <ul class="navbar-nav ml-auto">
           <% if general_user_signed_in? %>
           <li><%= link_to "ホーム",root_path, class:"btn btn-light"%></li>
@@ -19,6 +27,7 @@
           <li><%= link_to "ログイン",general_user_session_path, class:"btn btn-light"%></li>
 
           <% end %>
+  
         </ul>
       </div>
     </div>

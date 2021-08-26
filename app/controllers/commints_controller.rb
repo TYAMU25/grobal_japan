@@ -12,6 +12,6 @@ class CommintsController < ApplicationController
   private
 
   def comment_params
-    params.require(:commint).permit(:comment)
+    params.require(:commint).permit(:comment, :submission_id)
   end
 end
