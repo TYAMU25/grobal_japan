@@ -29,7 +29,7 @@ class CustomersController < ApplicationController
 
   def withdraw
     @customer = current_general_user
-    @customer.destroy
+    @customer.delete
     reset_session
     redirect_to root_path, alert: '退会しました'
   end

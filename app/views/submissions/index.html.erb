@@ -15,7 +15,7 @@
         <th scope="row"><%= submission.id %></th>
         <td><%= link_to submission.general_user.name, submission_path(submission.id) %></td>
         <td><%= submission.title %></td>
-        <% if submission.greats.present? %>
+        <% if submission.greats.find_by(general_user_id: current_general_user.id).present? %>
         <td>
           <%= link_to great_path(submission.id), method: :delete, remote: true do %>
             ★<%= submission.greats.count %> 

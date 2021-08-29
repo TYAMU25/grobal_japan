@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="row">
+  <h1 class="h1">MY PAGE</h1>
+  <div id="mypage" class="row ccenter">
     <div class="col-md-4">
-      <%#= attachment_image_tag current_general_user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
       <table class="table">
         <tbody>
           <tr>
@@ -9,16 +9,31 @@
         	  <th><%= current_general_user.name%></th>
           </tr>
           <tr>
-        	  <td>フォロー数: <%= current_general_user.followings.count %></td>
+        	  <td>フォロー:数</td>
+        	  <td>&lt;<%= current_general_user.followings.count %>&gt;</td>
         	</tr>
         	<tr>
-        	  <td>フォロワー数: <%= current_general_user.followers.count %></td>
+        	  <td>フォロワー数:</td>
+        	  <td>&lt;<%= current_general_user.followings.count %>&gt;</td>
           </tr>
         </tbody>
       </table>
-
-      <div class="row">
        <%=link_to"編集" ,edit_customer_path(@current_general_user),class:"btn btn-outline-light btn-block fas fa-user-cog"%>
       </div>
-      <td><%#= link_to 'Destroy', submission_path(@submission), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy__#{submission_path(@current_general_user).id}"%></td>
-        
+    <div class="col-md-8">
+      <table class="table">
+     	<tbody>
+	      <tr>
+		      <th width="140">name</th>
+			    <th>title</th>
+	      </tr>
+	       <% @current_general_user.greats.each do |great| %>
+		    <tr>
+		      <td><%= great.submission.general_user.name %></td>
+		      <td><%= great.submission.title %></td>
+	      </tr>
+	       <% end %>
+   	  </tbody>
+      </table>
+    </div>
+</div>  
