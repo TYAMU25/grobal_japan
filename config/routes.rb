@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :guests
-  devise_for :admins
+  
   devise_for :general_users
   # devise_for :admins, controllers: {
   # sessions:      'admin/sessions',
