@@ -28,7 +28,7 @@
           <% end %>
         </td>
       <% end %>
-        <td>
+        <td id=<%= "btn_link_" + submission.general_user.id.to_s %> >
           <%= render 'info', user: submission.general_user %>
         </td>
       </tr>

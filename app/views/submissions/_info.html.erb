@@ -1,7 +1,7 @@
 <% if current_general_user.id != user.id %>
 <% if current_general_user.following?(user) %>
-  <%= link_to "フォロー中", relationships_path(general_user_id: user.id), method: :delete,class:"btn btn-outline-light" %>
+  <%= link_to "フォロー中", relationships_path(general_user_id: user.id), method: :delete,class:"btn btn-outline-light", remote: true %>
 <% else %>
-  <%= link_to "フォロー", relationships_path(general_user_id: user.id), method: :post,class:"btn btn-light" %>
+  <%= link_to "フォロー", relationships_path(general_user_id: user.id), method: :post,class:"btn btn-light", remote: true %>
 <% end %>
 <% end %>

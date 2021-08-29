@@ -1,0 +1,1 @@
+$("#btn_link_<%= @user.id %>").html('<%= link_to "フォロー中", relationships_path(general_user_id: @user.id), method: :delete,class:"btn btn-outline-light", remote: true %>');
