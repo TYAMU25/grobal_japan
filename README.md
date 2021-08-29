@@ -16,7 +16,7 @@
 海外にいる日本人の友達を作りたい方。
 
 ### 主な利用シーン
-海外の観光の写真を投稿したり、海外にいる日本人の友人を作りたいと思ったとき。
+海外にいる日本人の友人を作りたいと思ったとき。
 
 ## 設計書
 https://docs.google.com/spreadsheets/d/1xaPtI_EXKU798UyZEDq2UXZ5XgM4MBm0iXn52uT5m6E/edit#gid=2133469642 ルーティング設計
