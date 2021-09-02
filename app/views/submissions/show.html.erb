@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-md-5 mx-auto">
-      <h3 class="text-center"><%= @general_user.name %></h3>
+      <h3 class="text-center"><%= @submission.general_user.name %></h3>
+      <h3 class="text-center"><%= @submission.text %></h3>
+      <%= attachment_image_tag @submission, :image, size: "200x200"  %>
       <div class="my-3 text-center">
         <%= form_for [@submission, @commint] do |f| %>
           <%= f.hidden_field :submission_id, value: params[:id] %>
@@ -24,4 +26,5 @@
       <% end %>
     </div>
   </div>
-</div>
+</div
+ rails g migration AddScoreToSubmissions 'score:decimal{5,3}'

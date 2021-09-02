@@ -32,6 +32,10 @@ class SubmissionsController < ApplicationController
     @submission.name = ''
     @submission.general_user_id = current_general_user.id
     @submission.save
+    tags = Vision.get_image_data(@submission.image)    
+    tags.each do |tag|
+    @submission.tags.create(name: tag)
+    end
     redirect_to submissions_path
   end
 
@@ -41,6 +45,6 @@ class SubmissionsController < ApplicationController
 
   # ストロングパラメータ
   def submission_params
-    params.require(:submission).permit(:title, :text, :name, :gender, :submissions_target)
+    params.require(:submission).permit(:title, :text, :name, :gender, :submissions_target, :image)
   end
 end
