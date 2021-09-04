@@ -31,6 +31,7 @@ class SubmissionsController < ApplicationController
     @submission = Submission.new(submission_params)
     @submission.name = ''
     @submission.general_user_id = current_general_user.id
+    @submission.score = Language.get_data(submission_params[:text])  #この行を追加
     @submission.save
     tags = Vision.get_image_data(@submission.image)    
     tags.each do |tag|
