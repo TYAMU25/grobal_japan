@@ -1,4 +1,19 @@
+<div class="container">
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">名前</th>
+      <th scope="col">性別</th>
+      <th scope="col">国</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
 <% @general_users.each do |general_user| %>
-    <%= general_user.name %>
-    <%= general_user.gender %>
+    <tr> 
+    <td><%= general_user.general_user.name %></td>
+    <td><%= general_user.gender %></td>
+    <td><%= general_user.submissions_target %></td>
+    </tr>
 <% end %>
+</div>

@@ -7,9 +7,8 @@ class SubmissionsController < ApplicationController
   end
 
   def index
-    @submissions = Submission.all.order(created_at: 'DESC')
+    @submissions = Submission.all.order(created_at: 'DESC').page(params[:page]).per(10)
     @submission = current_general_user
-    @general_user = GeneralUser.page(params[:page]).per(10)
   end
 
   def edit
