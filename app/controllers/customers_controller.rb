@@ -4,6 +4,7 @@ class CustomersController < ApplicationController
   end
 
   def edit
+    redirect_to customer_path(params[:id]) if params[:id].to_i != current_general_user.id
     @general_user = GeneralUser.find(params[:id])
   end
 

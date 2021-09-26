@@ -6,6 +6,7 @@
       <th scope="col">名前</th>
       <th scope="col">タイトル</th>
       <th scope="col">募集国</th>
+      <th scope="col">お気に入り</th>
       <th scope="col"></th>
     </tr>
   </thead>
@@ -16,20 +17,21 @@
         <th scope="row"><%= submission.id %></th>
         <td><%= link_to submission.general_user.name, submission_path(submission.id) %></td>
         <td><%= submission.title %></td>
-        <% if submission.greats.find_by(general_user_id: current_general_user.id).present? %>
         <td>
+          <%= submission.submissions_target %>
+        </td>
+        <td>
+        <% if submission.greats.find_by(general_user_id: current_general_user.id).present? %>
           <%= link_to great_path(submission.id), method: :delete, remote: true do %>
             ★<%= submission.greats.count %> 
           <% end %>
-        </td>
-      <% else %>
-        <td>
+        <% else %>
           <%= link_to great_index_path(id: submission.id), method: :post, remote: true do %>
             ☆<%= submission.greats.count %> 
           <% end %>
+        <% end %>
         </td>
-      <% end %>
-        <td id=<%= "btn_link_" + submission.general_user.id.to_s %> >
+        <td class=<%= "btn_link_" + submission.general_user.id.to_s %> >
           <%= render 'info', user: submission.general_user %>
         </td>
       </tr>
