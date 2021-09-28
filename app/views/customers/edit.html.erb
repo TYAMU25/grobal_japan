@@ -32,9 +32,16 @@
       </div>
 
       <div class="form-group row">
-        <%= f.label :encrypted_password, "パスワード", class: "col-form-label col-md-4" %>
+        <%= f.label :password, "パスワード", class: "col-form-label col-md-4" %>
         <div class="col-sm-6 col-md-4">
-          <%= f.text_field :encrypted_password, class: "form-control" %>
+          <%= f.password_field :password, class: "form-control" %>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <%= f.label :password_confirmation, "パスワード(kakunin)", class: "col-form-label col-md-4" %>
+        <div class="col-sm-6 col-md-4">
+          <%= f.password_field :password_confirmation, class: "form-control" %>
         </div>
       </div>
       

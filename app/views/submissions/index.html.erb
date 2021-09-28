@@ -34,6 +34,11 @@
         <td class=<%= "btn_link_" + submission.general_user.id.to_s %> >
           <%= render 'info', user: submission.general_user %>
         </td>
+        <td>
+          <% if current_general_user.id == submission.general_user_id %>
+            <%= link_to "削除", submission_path(submission), method: :delete, class: "btn btn-danger" %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>   

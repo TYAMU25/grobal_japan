@@ -40,7 +40,11 @@ class SubmissionsController < ApplicationController
     redirect_to submissions_path
   end
 
-  def destroy; end
+  def destroy 
+    submission = Submission.find(params[:id])
+    submission.destroy if current_general_user.id == submission.general_user_id
+    redirect_to submissions_path
+  end
 
   private
 
