@@ -30,17 +30,17 @@ class SubmissionsController < ApplicationController
     @submission = Submission.new(submission_params)
     @submission.name = ''
     @submission.general_user_id = current_general_user.id
-    @submission.score = Language.get_data(submission_params[:text])  #この行を追加
+    @submission.score = Language.get_data(submission_params[:text])  # この行を追加
     @submission.save
     tags = []
-    tags = Vision.get_image_data(@submission.image) if @submission.image.present? 
+    tags = Vision.get_image_data(@submission.image) if @submission.image.present?
     tags.each do |tag|
       @submission.tags.create(name: tag)
     end
     redirect_to submissions_path
   end
 
-  def destroy 
+  def destroy
     submission = Submission.find(params[:id])
     submission.destroy if current_general_user.id == submission.general_user_id
     redirect_to submissions_path

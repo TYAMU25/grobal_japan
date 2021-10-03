@@ -11,6 +11,6 @@ class ApplicationController < ActionController::Base
   end
 
   def set_q
-     @q = Submission.ransack(params[:q])
+    @q = Submission.ransack(params[:q])
   end
 end

@@ -65,6 +65,7 @@ gem 'carrierwave'
 gem 'devise'
 gem 'dotenv-rails'
 gem 'dotenv-rails'
+gem 'dotenv-rails'
 gem 'enumerize'
 gem 'font-awesome-sass', '~> 5.13'
 gem 'jquery-rails'
@@ -75,7 +76,6 @@ gem 'refile-mini_magick'
 gem 'rubocop', require: false
 gem 'rubocop-rails', require: false
 gem 'turbolinks', '~> 5'
-gem 'dotenv-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 group :production do
   gem 'mysql2'

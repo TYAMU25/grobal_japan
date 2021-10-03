@@ -29,9 +29,9 @@ Rails.application.routes.draw do
   delete 'comments/destroy', to: 'comments#destroy'
   delete 'submissions/destroy', to: 'submissions#destroy'
   resources :submissions, only: %i[create edit update destroy show new index] do
-  resources :commints, only: [:create]
+    resources :commints, only: [:create]
   end
-  
+
   get 'customers/unsubscribe' => 'customers/withdraw'
   patch 'customers/withdraw'
   resources :customers, only: %i[edit update show destroy]

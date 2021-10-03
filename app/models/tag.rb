@@ -1,3 +1,3 @@
 class Tag < ApplicationRecord
-    belongs_to :submission
+  belongs_to :submission
 end
